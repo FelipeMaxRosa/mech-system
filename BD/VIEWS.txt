@@ -1,0 +1,29 @@
+Visualiza Cliente de Pessoa Fisica
+=====================
+DROP VIEW IF EXISTS `clientespf`;
+CREATE OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` 
+SQL SECURITY DEFINER VIEW `clientespf` 
+AS 
+select `cli`.`id` AS `id`,`pf`.`nome` AS `nome`,`pf`.`apelido` AS `apelido`,`pf`.`rg` AS `rg`,
+`pf`.`cpf` AS `cpf`,`cli`.`cep` AS `cep`,`cli`.`logradouro` AS `logradouro`,
+`cli`.`numero` AS `numero`,`cli`.`bairro` AS `bairro`,`cli`.`cidade` AS `cidade`,
+`cli`.`estado` AS `estado`,`pf`.`datanasc` AS `datanasc`,`pf`.`nomepai` AS `nomepai`,
+`pf`.`nomemae` AS `nomemae`,`cli`.`email` AS `email`,`cli`.`telefone1` AS `telefone1`,
+`cli`.`ramal1` AS `ramal1`,`cli`.`telefone2` AS `telefone2`,`cli`.`ramal2` AS `ramal2`,
+`cli`.`obs` AS `obs`, `cli`.`c_status` AS `c_status` 
+from (`pessoafisica` `pf` join `clientes` `cli` on((`pf`.`cpf` = `cli`.`PessoaFisica_cpf`)))
+ order by `pf`.`nome`;
+
+Visualiza Cliente de Pessoa Juridica
+=====================
+DROP VIEW IF EXISTS `clientespj`;
+CREATE OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`
+SQL SECURITY DEFINER VIEW `clientespj` 
+AS
+ select `cli`.`id` AS `id`,`pj`.`razaosocial` AS `razaosocial`,`pj`.`nomefantasia` AS `nomefantasia`,
+`pj`.`ie` AS `ie`,`pj`.`cnpj` AS `cnpj`,`cli`.`cep` AS `cep`,`cli`.`logradouro` AS `logradouro`,
+`cli`.`numero` AS `numero`,`cli`.`bairro` AS `bairro`,`cli`.`cidade` AS `cidade`,`cli`.`estado` AS `estado`,
+`cli`.`email` AS `email`,`cli`.`telefone1` AS `telefone1`,`cli`.`ramal1` AS `ramal1`,`cli`.
+`telefone2` AS `telefone2`,`cli`.`ramal2` AS `ramal2`,`cli`.`obs` AS `obs`, `cli`.`c_status` AS `c_status`
+from (`clientes` `cli` join `pessoajuridica` `pj` on((`cli`.`PessoaJuridica_cnpj` = `pj`.`cnpj`))) 
+order by `pj`.`razaosocial`;

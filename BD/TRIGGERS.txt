@@ -1,0 +1,19 @@
+(Não deu certo, pois fica em loop infinito) TRIGGER DE ATUALIZACAO DO CAMPO estado_estoque
+========================================================================
+
+DELIMITER |
+CREATE TRIGGER trg_estado_estoque
+BEFORE INSERT ON produtos
+FOR EACH ROW
+BEGIN
+  IF(estoque <> NEW.estoque) THEN
+      UPDATE produtos SET estado_estoque =
+      CASE
+      WHEN NEW.estoque > estoqueminimo THEN 'DISPONIVEL'
+      WHEN NEW.estoque < estoqueminimo THEN 'ABAIXO DO MINIMO'
+      ELSE 'MINIMO'
+      END;
+
+  END IF;
+END |
+DELIMITER;

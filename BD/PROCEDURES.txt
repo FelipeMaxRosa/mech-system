@@ -1,0 +1,27 @@
+Atualiza o campo estado_estoque
+========================================
+
+DELIMITER |
+CREATE PROCEDURE sp_estado_estoque()
+BEGIN
+      UPDATE produtos SET estado_estoque =
+      CASE
+      WHEN estoque > estoqueminimo THEN 'DISPONIVEL'
+      WHEN estoque < estoqueminimo THEN 'ABAIXO DO MINIMO'
+      ELSE 'MINIMO'
+      END;
+END |
+DELIMITER;
+
+Cadastra os Codigos de EANs
+====================================================
+DELIMITER $$
+
+CREATE PROCEDURE sp_cad_ean(p_ean13 VARCHAR(13), p_idproduto INT,
+p_emb VARCHAR(10), p_unid INT)
+BEGIN
+      INSERT INTO cod_barras
+      VALUES (p_ean13, p_idproduto, p_emb, p_unid);
+END $$
+
+DELIMITER ;

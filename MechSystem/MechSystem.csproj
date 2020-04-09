@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69307A9F-6032-4523-A542-2B67D4D1E294}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MechSystem</RootNamespace>
+    <AssemblyName>MechSystem</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>mechsystemICO.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="MySql.Data, Version=6.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutJM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutJM.designer.cs">
+      <DependentUpon>AboutJM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BancoDados.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="dsProdForn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsProdForn.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRelatorioOs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRelatorioOs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Finalizadora.cs" />
+    <Compile Include="FormAjuEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjuEstoque.designer.cs">
+      <DependentUpon>FormAjuEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadClientes.designer.cs">
+      <DependentUpon>FormCadClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadCodBarras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadCodBarras.Designer.cs">
+      <DependentUpon>FormCadCodBarras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadFinalizadoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadFinalizadoras.designer.cs">
+      <DependentUpon>FormCadFinalizadoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadFornecedores.designer.cs">
+      <DependentUpon>FormCadFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadFuncao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadFuncao.designer.cs">
+      <DependentUpon>FormCadFuncao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadFuncionarios.designer.cs">
+      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadOs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadOs.designer.cs">
+      <DependentUpon>FormCadOs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadProdutos.designer.cs">
+      <DependentUpon>FormCadProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadServicos.designer.cs">
+      <DependentUpon>FormCadServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadUsuarios.designer.cs">
+      <DependentUpon>FormCadUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadVeiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadVeiculos.designer.cs">
+      <DependentUpon>FormCadVeiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridClientes.Designer.cs">
+      <DependentUpon>FormGridClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridClientesPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridClientesPF.designer.cs">
+      <DependentUpon>FormGridClientesPF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridClientesPJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridClientesPJ.designer.cs">
+      <DependentUpon>FormGridClientesPJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridFinalizadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridFinalizadora.designer.cs">
+      <DependentUpon>FormGridFinalizadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridFornecedores.designer.cs">
+      <DependentUpon>FormGridFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridFuncao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridFuncao.designer.cs">
+      <DependentUpon>FormGridFuncao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridFuncionarios.designer.cs">
+      <DependentUpon>FormGridFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridOs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridOs.designer.cs">
+      <DependentUpon>FormGridOs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridProdutos.designer.cs">
+      <DependentUpon>FormGridProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridServicos.designer.cs">
+      <DependentUpon>FormGridServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridUsuarios.designer.cs">
+      <DependentUpon>FormGridUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGridVeiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGridVeiculos.designer.cs">
+      <DependentUpon>FormGridVeiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioComprovante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioComprovante.designer.cs">
+      <DependentUpon>FormRelatorioComprovante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioOs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioOs.designer.cs">
+      <DependentUpon>FormRelatorioOs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelProdForn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelProdForn.designer.cs">
+      <DependentUpon>FormRelProdForn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor.cs" />
+    <Compile Include="Funcao.cs" />
+    <Compile Include="Funcionario.cs" />
+    <Compile Include="ItemOsPeca.cs" />
+    <Compile Include="ItemOsServico.cs" />
+    <Compile Include="OrdemServico.cs" />
+    <Compile Include="PessoaFisica.cs" />
+    <Compile Include="PessoaJuridica.cs" />
+    <Compile Include="Produtos.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutJM.resx">
+      <DependentUpon>AboutJM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAjuEstoque.resx">
+      <DependentUpon>FormAjuEstoque.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadClientes.resx">
+      <DependentUpon>FormCadClientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadCodBarras.resx">
+      <DependentUpon>FormCadCodBarras.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadFinalizadoras.resx">
+      <DependentUpon>FormCadFinalizadoras.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadFornecedores.resx">
+      <DependentUpon>FormCadFornecedores.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadFuncao.resx">
+      <DependentUpon>FormCadFuncao.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadFuncionarios.resx">
+      <DependentUpon>FormCadFuncionarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadOs.resx">
+      <DependentUpon>FormCadOs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadProdutos.resx">
+      <DependentUpon>FormCadProdutos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadServicos.resx">
+      <DependentUpon>FormCadServicos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadUsuarios.resx">
+      <DependentUpon>FormCadUsuarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadVeiculos.resx">
+      <DependentUpon>FormCadVeiculos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridClientes.resx">
+      <DependentUpon>FormGridClientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridClientesPF.resx">
+      <DependentUpon>FormGridClientesPF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridClientesPJ.resx">
+      <DependentUpon>FormGridClientesPJ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridFinalizadora.resx">
+      <DependentUpon>FormGridFinalizadora.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridFornecedores.resx">
+      <DependentUpon>FormGridFornecedores.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridFuncao.resx">
+      <DependentUpon>FormGridFuncao.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridFuncionarios.resx">
+      <DependentUpon>FormGridFuncionarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridOs.resx">
+      <DependentUpon>FormGridOs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridProdutos.resx">
+      <DependentUpon>FormGridProdutos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridServicos.resx">
+      <DependentUpon>FormGridServicos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridUsuarios.resx">
+      <DependentUpon>FormGridUsuarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGridVeiculos.resx">
+      <DependentUpon>FormGridVeiculos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioComprovante.resx">
+      <DependentUpon>FormRelatorioComprovante.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioOs.resx">
+      <DependentUpon>FormRelatorioOs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelProdForn.resx">
+      <DependentUpon>FormRelProdForn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelComprovanteEntrada.rdlc" />
+    <EmbeddedResource Include="RelOs.rdlc" />
+    <EmbeddedResource Include="RelProdForn.rdlc" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="dsProdForn.xsc">
+      <DependentUpon>dsProdForn.xsd</DependentUpon>
+    </None>
+    <None Include="dsProdForn.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProdForn.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsProdForn.xss">
+      <DependentUpon>dsProdForn.xsd</DependentUpon>
+    </None>
+    <None Include="dsRelatorioOs.xsc">
+      <DependentUpon>dsRelatorioOs.xsd</DependentUpon>
+    </None>
+    <None Include="dsRelatorioOs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRelatorioOs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRelatorioOs.xss">
+      <DependentUpon>dsRelatorioOs.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Servicos.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="ValidaCNPJ.cs" />
+    <Compile Include="ValidaCPF.cs" />
+    <Compile Include="ValidaEAN.cs" />
+    <Compile Include="Veiculo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="exec.ico" />
+    <Content Include="mechsystemICO.ico" />
+    <Content Include="MySql.Data.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
